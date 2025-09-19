@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-java-app
+  labels:
+    role: webapp
+spec:
+  serviceAccountName: default
+  containers:
+    - name: web
+      image: emdadripon/demo:latest1.0
+      ports:
+        - containerPort: 80
+          name: web
+          protocol: TCP
